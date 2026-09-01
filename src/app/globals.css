@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap");
+
+:root {
+  --paper: #f6f1e6;
+  --ink: #241c14;
+  --mute: #6b5d4d;
+  --line: #c9b8a0;
+  --accent: #b5523a;
+  --card: #fffaf2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #fffdf8 0%, transparent 50%),
+    var(--paper);
+  color: var(--ink);
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+button,
+textarea,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.masthead h1 {
+  font-family: "Klee One", serif;
+  font-size: 36px;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.lede {
+  color: var(--mute);
+  margin: 6px 0 0;
+  max-width: 42rem;
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 340px 1fr 360px;
+  gap: 18px;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 0 rgba(36, 28, 20, 0.04);
+}
+
+.card h2 {
+  font-family: "Klee One", serif;
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  color: var(--mute);
+  margin: 10px 0 4px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--ink);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fffaf2;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.error {
+  color: var(--accent);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.hint {
+  color: var(--mute);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.sheet img,
+.panel img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #f4efe4;
+}
+
+.script {
+  display: grid;
+  gap: 10px;
+}
+
+.panel-edit {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.panel-edit b {
+  font-family: "Klee One", serif;
+}
+
+.strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.cell {
+  position: relative;
+  border-bottom: 3px solid var(--ink);
+}
+
+.cell:last-child {
+  border-bottom: none;
+}
+
+.cell img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #f4efe4;
+}
+
+.bubble {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  max-width: 72%;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 6px 10px;
+  font-family: "Klee One", serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.caption {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(246, 241, 230, 0.88);
+  padding: 4px 8px;
+  font-size: 12px;
+  max-width: 70%;
+}
+
+.placeholder {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  color: var(--mute);
+  background: repeating-linear-gradient(
+    -12deg,
+    #f4efe4,
+    #f4efe4 8px,
+    #efe7d8 8px,
+    #efe7d8 16px
+  );
+}
+
+.sketch canvas {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  touch-action: none;
+  cursor: crosshair;
+  background: #f4efe4;
+}
+
+.sketch-tools {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.sketch-tools button,
+.tab {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.sketch-tools button.on,
+.tab.on {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.sketch-label {
+  font-size: 12px;
+  color: var(--mute);
+  margin-bottom: 6px;
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.meta p {
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+
+.status {
+  font-size: 13px;
+  color: var(--mute);
+}
